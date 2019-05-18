@@ -1,16 +1,18 @@
 %{
 Calculates the robust optimal control over a given time horizon.
+SOCP approach.
+
+Keenan Albee, Alex Steighner
+May-18, 2019
 %}
 
 function [u] = robust_rhc_socp(N, system)
     import mosek.fusion.*;
     
-    % N time horizon DON'T USE MORE THAN LIKE 5
+    % N time horizon
     n_u = 3;
     n_w = 6;
     n_x = 6;
-
-%     system = Dynamics_3DoF();  % current system
 
     %% set up dynamics
     dynamics=struct('A',[],'B',[],'C',[],'Q',[],'R',[],'q',[],'r',[]);
@@ -26,9 +28,6 @@ function [u] = robust_rhc_socp(N, system)
     dynamics.r = zeros(size(system.B, 2), 1);  % assume 0, these are rarely used for actual control problems
 
     x0 = system.x;  % arbitrary initial state
-    % x0 = zeros(6,1)
-    % x0 = [2,2,2,2,2,2]'
-    
     gamma = 1;  % this is the constant representing uncertainty set size. 0 should give LQR solution. gamma == omega
 
     %% generate SOCP constraint

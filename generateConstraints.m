@@ -10,6 +10,9 @@ detailed explaination.
 N is the number of states available (time horizon)
 x0 is the initial state
 gamma is the constant representing the noise
+
+Keenan Albee, Alex Steighner
+May-18, 2019
 %}
 
 function [constraint_matrix, A, B, C, D, a, b, c, h, F] = generateConstraints(dynamics, N, x0, gamma) 

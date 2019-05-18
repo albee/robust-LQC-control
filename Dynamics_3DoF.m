@@ -1,4 +1,9 @@
-% A double integrator with rotation. Call FD updates to Euler integrate.
+%{
+A double integrator with rotation. Call FD updates to Euler integrate.
+Keenan Albee, Alex Steighner
+May-18, 2019
+%}
+
 classdef Dynamics_3DoF < handle
     properties
         % Real system model
