@@ -4,6 +4,6 @@ the price of on-average larger cost functions. An SDP (slow) and SOCP (fast) rec
 
 You must install the MOSEK Fusion MATLAB API as a prerequisite.
 
-Please see the included report for documentation.
+Code begins at `dynamics_main_robust.m`. Please see the included report for documentation.
 
 ![ ](/media/sample_socp.png)
